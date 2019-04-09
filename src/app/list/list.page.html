@@ -16,7 +16,7 @@
 <ion-content>
 
     <ion-card *ngFor="let item of items">
-        <ion-item>
+        <ion-item tappable (click)="viewDetail($event,item)">
             <ion-icon [name]="item.icon" slot="start"></ion-icon>
             {{item.title}}
             <div class="item-note" slot="end">
@@ -24,9 +24,5 @@
             </div>
         </ion-item>
     </ion-card>
-    <!--
-      <div *ngIf="selectedItem" padding>
-        You navigated here from <b>{{selectedItem.title }}</b>
-      </div>
-    -->
+
 </ion-content>

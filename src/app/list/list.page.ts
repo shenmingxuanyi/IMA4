@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['list.page.scss']
 })
 export class ListPage implements OnInit {
-    private selectedItem: any;
+
     private icons = [
         'flask',
         'wifi',
@@ -34,8 +34,7 @@ export class ListPage implements OnInit {
     ngOnInit() {
     }
 
-    // add back when alpha.4 is out
-    // navigate(item) {
-    //   this.router.navigate(['/list', JSON.stringify(item)]);
-    // }
+    viewDetail($event, item) {
+
+    }
 }
