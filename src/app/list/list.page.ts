@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {MenuController} from '@ionic/angular';
 
 @Component({
     selector: 'app-list',
@@ -21,7 +22,7 @@ export class ListPage implements OnInit {
     ];
     public items: Array<{ title: string; note: string; icon: string }> = [];
 
-    constructor() {
+    constructor(public menuController: MenuController) {
         for (let i = 1; i < 11; i++) {
             this.items.push({
                 title: 'Item ' + i,
@@ -36,5 +37,13 @@ export class ListPage implements OnInit {
 
     viewDetail($event, item) {
 
+    }
+
+    async ionViewDidEnter() {
+        this.menuController.enable(true, 'SEARCH_MENU');
+    }
+
+    async ionViewWillLeave() {
+        this.menuController.enable(false, 'SEARCH_MENU');
     }
 }
